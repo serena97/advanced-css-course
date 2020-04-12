@@ -1,0 +1,9 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both; // clears both float so float won't collapse the element's height
+    }
+}
+
+// : is pseudo class, :: is pseudo element
