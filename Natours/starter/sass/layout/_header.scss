@@ -7,6 +7,7 @@
     url('../img/hero.jpg');
     background-size: cover; /* fits image in viewport */
     background-position: top; /* ensures image stays at top even when resize browser */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* xy coords starting from top left clockwise https://bennettfeely.com/clippy/ */
     
     &__logo-box {
