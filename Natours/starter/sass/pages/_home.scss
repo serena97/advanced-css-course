@@ -3,3 +3,19 @@
     padding: 25rem 0; // 25rem for top and bottom padding because 20vh is minimum 
     margin-top: -20vh; // pushes block up to meet the end of clip path in header ie. 95vh - 75vh = 20vh
 }
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+    url('../img/nat-4.jpg');
+    background-size: cover;
+    transform: skewY(-7deg); //clip path too annoying
+    margin-top: -10rem;
+
+    & > * { // direct child. if we did it & * then we will select all the child not just the direct child
+        transform: skewY(7deg);
+    }
+}
