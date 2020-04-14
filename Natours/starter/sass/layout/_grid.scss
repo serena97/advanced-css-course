@@ -1,6 +1,6 @@
 .row {
     max-width: $grid-width; //10px == 1rem
-    background-color: #eee;
+    // background-color: #eee;
     margin: 0 auto; // 0 for top and bottom, left and right will be automatically worked out and be the same
 
     &:not(:last-child) {
@@ -10,7 +10,7 @@
     @include clearfix;
 
     [class^="col-"] { // use regex to select all attributes that start with col-. If class$= then end with col-
-        background-color: orangered;
+        // background-color: rgb(168, 158, 154);
         float: left;
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
