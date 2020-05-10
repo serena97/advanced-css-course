@@ -1,0 +1,64 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+    // & * { // this won't work on the circle as transform: translateX(-3rem); takes precedence on this one
+    //     transform: skewX(12deg);
+    // }
+
+    &__shape {
+        height: 15rem;
+        width: 15rem;
+        background-color: orangered;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%); // radius is 7.5rem
+        shape-outside: circle(50% at 50% 50%); // radius is 7.5rem, makes text wrap around circle
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg); // best way to move an element that is floated is to use transform instead of margin
+        position: relative;
+    }
+
+    &__img {
+        height: 100%; // not width 100% or both width height 100% because that will make the image not span the height correctly
+        transform: translateX(-4rem) scale(1.4);
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%; // top, left and transform are the quintessential for centering text in elements
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s ease;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption { // story is the element to hover, not caption
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img { 
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+
+}
